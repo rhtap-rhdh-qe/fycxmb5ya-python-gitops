@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: fycxmb5ya-python-gitops
+  description: This is GitOps manifest for fycxmb5ya-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=fycxmb5ya-python
+    backstage.io/kubernetes-id: fycxmb5ya-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: fycxmb5ya-python   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:fycxmb5ya-python
